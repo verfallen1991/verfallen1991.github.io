@@ -309,24 +309,14 @@
 
       
         
-          
-            <a id="more"></a> 
-
-<p><img src="/img/2.jpg" alt="2"></p>
-<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><ul>
-<li>值传递：会创建副本，函数中无法改变原始对象，类类型时，复制对象的引用</li>
-<li>引用传递：不创建副本，函数中可以改变原始对象</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">public class TestPass &#123;</span><br><span class="line">    public static void methodPassInt(int i) &#123;</span><br><span class="line">        i &#x3D; 20;</span><br><span class="line">        System.out.println(&quot;inner method:&quot; + i);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void method1(StringBuilder s) &#123;</span><br><span class="line">        s &#x3D; new StringBuilder(&quot;, hello method1&quot;);</span><br><span class="line">        System.out.println(&quot;inner method1:&quot; + s + &quot;   &quot; + &quot;hashcode:&quot; + s.hashCode());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void method2(StringBuilder s) &#123;</span><br><span class="line">        s.append(&quot;, method2&quot;);</span><br><span class="line">        System.out.println(&quot;inner method2:&quot; + s + &quot;   &quot; + &quot;hashcode:&quot; + s.hashCode());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        &#x2F;&#x2F; 示例一： 基础类型int pass by value</span><br><span class="line">        System.out.println(&quot;#############示例一##########&quot;);</span><br><span class="line">        int i &#x3D; 10;</span><br><span class="line">        methodPassInt(i);</span><br><span class="line">        System.out.println(&quot;after call:&quot; + i);</span><br><span class="line">        System.out.println(&quot;#############示例一##########&quot;);</span><br><span class="line">        &#x2F;&#x2F; 示例二： 类类型示例一</span><br><span class="line">        System.out.println(&quot;#############示例二##########&quot;);</span><br><span class="line">        StringBuilder s &#x3D; new StringBuilder(&quot;hi&quot;);</span><br><span class="line">        System.out.println(s.hashCode());</span><br><span class="line">        method1(s);</span><br><span class="line">        System.out.println(s);</span><br><span class="line">        System.out.println(&quot;#############示例二##########&quot;);</span><br><span class="line">        &#x2F;&#x2F; 示例三：类类型示例二</span><br><span class="line">        System.out.println(&quot;#############示例三##########&quot;);</span><br><span class="line">        method2(s);</span><br><span class="line">        System.out.println(s);</span><br><span class="line">        System.out.println(&quot;#############示例三##########&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">结果</span><br><span class="line">#############示例一##########</span><br><span class="line">inner method:20</span><br><span class="line">after call:10</span><br><span class="line">#############示例一##########</span><br><span class="line">#############示例二##########</span><br><span class="line">685325104</span><br><span class="line">inner method1:, hello method1   hashcode:460141958</span><br><span class="line">hi</span><br><span class="line">#############示例二##########</span><br><span class="line">#############示例三##########</span><br><span class="line">inner method2:hi, method2   hashcode:685325104</span><br><span class="line">hi, method2</span><br><span class="line">#############示例三##########</span><br></pre></td></tr></table></figure>
-<h1 id="验证一：基础类型传递方式为值传递"><a href="#验证一：基础类型传递方式为值传递" class="headerlink" title="验证一：基础类型传递方式为值传递"></a>验证一：基础类型传递方式为值传递</h1><p>传递int型参数，在函数调用后原值未变，证明为值传递</p>
-<p>#验证二：类类型传递方式为值传递<br>若为引用传递，s应该变化，实际结果未变</p>
-<p>#验证三：类类型传递方式为值传递</p>
-<ul>
-<li>值传递不能改变原始对象，由于传递的是对象的引用，所以不能改变此引用</li>
-<li>传递的是引用，所以可以随意改变引用指向的对象</li>
-</ul>
-
-          
+          <p><img src="/img/2.jpg" alt="2"></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/06/09/%E6%88%90%E7%A5%9E%E4%B9%8B%E8%B7%AF-%E5%9F%BA%E7%A1%80%E7%AF%872-%E5%80%BC%E4%BC%A0%E9%80%92%E4%B8%8E%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
