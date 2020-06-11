@@ -433,39 +433,14 @@
 
       
         
-          
-            <a id="more"></a> 
-
-<p><img src="/img/1.jpg" alt="1"></p>
-<h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a><em>面向对象</em></h1><h2 id="一、面向对象与对象过程"><a href="#一、面向对象与对象过程" class="headerlink" title="一、面向对象与对象过程"></a>一、面向对象与对象过程</h2><h2 id="二、三大特征"><a href="#二、三大特征" class="headerlink" title="二、三大特征"></a>二、三大特征</h2><ul>
-<li>封装</li>
-<li>继承</li>
-<li>多态</li>
-</ul>
-<h2 id="三、五大原则"><a href="#三、五大原则" class="headerlink" title="三、五大原则"></a>三、五大原则</h2><ul>
-<li>单一职责：一个类只做一件事，达到高内聚低耦合</li>
-<li>开闭：对扩展开放，对修改封闭<br>做法：针对接口编程</li>
-<li>里氏替换：子类能完全替代基类，约束继承体系<br>做法：针对接口编程，将公共部分抽象为接口或者抽象类</li>
-<li>依赖倒置：依赖于抽象，而不依赖具体<br>做法：针对接口编程，上层和底层都实现接口，上层调用接口，底层实现接口<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">interface Transport &#123;</span><br><span class="line">    void move();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Car implements Transport &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void move() &#123;</span><br><span class="line">        System.out.println(&quot;start engine, and move forward 1 kilometer&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Bicycle implements Transport &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void move() &#123;</span><br><span class="line">        System.out.println(&quot;get on bicycle, and move forward 1 kilometer&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Driver &#123;</span><br><span class="line">    void drive(Transport t) &#123;</span><br><span class="line">        t.move();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class Demo &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Driver d &#x3D; new Driver();</span><br><span class="line">        d.drive(new Bicycle());</span><br><span class="line">        d.drive(new Car());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>接口隔离：避免胖接口</li>
-</ul>
-<h2 id="四、多态"><a href="#四、多态" class="headerlink" title="四、多态"></a>四、多态</h2><h3 id="静态多态与动态多态"><a href="#静态多态与动态多态" class="headerlink" title="静态多态与动态多态"></a>静态多态与动态多态</h3><ol>
-<li>静态多态：重载，编译期决定</li>
-<li>动态多态：重写，运行期决定</li>
-</ol>
-<p><strong>条件</strong></p>
-<ul>
-<li>继承</li>
-<li>重写</li>
-<li>向上转型</li>
-</ul>
-<h2 id="五、平台无关性"><a href="#五、平台无关性" class="headerlink" title="五、平台无关性"></a>五、平台无关性</h2><ul>
-<li>语言层面</li>
-<li>Class平台无关</li>
-<li>JVM平台有关</li>
-</ul>
-
-          
+          <p><img src="/img/1.jpg" alt="1"></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/06/09/%E6%88%90%E7%A5%9E%E4%B9%8B%E8%B7%AF-%E5%9F%BA%E7%A1%80%E7%AF%871-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
