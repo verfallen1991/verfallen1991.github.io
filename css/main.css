@@ -1943,7 +1943,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffffb5;
+  background: #25ff1b;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3240,4 +3240,10 @@ pre .javascript .function {
   .pagination {
     margin: 8px 0 0;
   }
+}
+#days {
+  display: block;
+  color: #fffa74;
+  font-size: 14px;
+  margin-top: 15px;
 }
