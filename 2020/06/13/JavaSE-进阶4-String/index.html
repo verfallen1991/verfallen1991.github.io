@@ -72,7 +72,7 @@
 
 
 
-  <meta name="keywords" content="," />
+  <meta name="keywords" content="java," />
 
 
 
@@ -83,9 +83,9 @@
 
 
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:title" content="JavaSE-进阶4-String">
-<meta property="og:url" content="http://yoursite.com/posts/JavaSE-%E8%BF%9B%E9%98%B64-String.html">
+<meta property="og:url" content="http://yoursite.com/2020/06/13/JavaSE-%E8%BF%9B%E9%98%B64-String/index.html">
 <meta property="og:site_name" content="Damon&#39;s blog">
 <meta property="og:image" content="http://yoursite.com/img/4.jpg">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/20183737-9ca6abc13a7eb087.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
@@ -124,7 +124,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/posts/JavaSE-进阶4-String.html"/>
+  <link rel="canonical" href="http://yoursite.com/2020/06/13/JavaSE-进阶4-String/"/>
 
 
 
@@ -280,24 +280,86 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/13/JavaSE-%E8%BF%9B%E9%98%B64-String/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Damon Salvatore">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/daojian.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Damon's blog">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">JavaSE-进阶4-String</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <p><img src="/img/4.jpg" alt="4"></p>
+          <h1 class="post-title" itemprop="name headline">JavaSE-进阶4-String</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-13T19:55:30+08:00">
+                2020-06-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/img/4.jpg" alt="4"></p>
 <a id="more"></a> 
 
 <h1 id="一、String相关类层次"><a href="#一、String相关类层次" class="headerlink" title="一、String相关类层次"></a>一、String相关类层次</h1><h2 id="1-String"><a href="#1-String" class="headerlink" title="1. String"></a>1. String</h2><h2 id="2-StringBuffer"><a href="#2-StringBuffer" class="headerlink" title="2. StringBuffer"></a>2. StringBuffer</h2><h2 id="3-StringBuilder"><a href="#3-StringBuilder" class="headerlink" title="3. StringBuilder"></a>3. StringBuilder</h2><p><img src="https://upload-images.jianshu.io/upload_images/20183737-9ca6abc13a7eb087.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="StringBuffer.jpg"></p>
@@ -329,15 +391,96 @@
 <h1 id="四、其他注意点"><a href="#四、其他注意点" class="headerlink" title="四、其他注意点"></a>四、其他注意点</h1><h2 id="1-语法糖而非操作符重载"><a href="#1-语法糖而非操作符重载" class="headerlink" title="1. 语法糖而非操作符重载"></a>1. 语法糖而非操作符重载</h2><p>反编译后知道，String的+实际会被编译器转为StringBuilder.append()</p>
 <p><strong>参考</strong><br><a href="https://hollischuang.github.io/toBeTopJavaer/#/basics/java-basic/string-concat" target="_blank" rel="noopener">https://hollischuang.github.io/toBeTopJavaer/#/basics/java-basic/string-concat</a></p>
 
-        
-      </div>
-      
-      
       
     </div>
     
     
     
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>救救孩子吧，我养猫的</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Damon Salvatore 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Damon Salvatore 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/06/10/JavaSE-%E8%BF%9B%E9%98%B63-%E6%8B%86%E8%A3%85%E7%AE%B1%E4%B8%8EInteger/" rel="next" title="JavaSE-进阶3-拆装箱与Integer">
+                <i class="fa fa-chevron-left"></i> JavaSE-进阶3-拆装箱与Integer
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/06/17/JavaSE-%E8%BF%9B%E9%98%B65-%E5%B8%B8%E9%87%8F%E6%B1%A0/" rel="prev" title="JavaSE-进阶5-常量池">
+                JavaSE-进阶5-常量池 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -395,9 +538,27 @@
           <nav class="site-state motion-element">
 
             
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
 
             
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
             
 
           </nav>

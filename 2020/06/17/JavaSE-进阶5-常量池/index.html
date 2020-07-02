@@ -72,7 +72,7 @@
 
 
 
-  <meta name="keywords" content=",," />
+  <meta name="keywords" content="java,jvm," />
 
 
 
@@ -83,9 +83,9 @@
 
 
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:title" content="JavaSE-进阶5-常量池">
-<meta property="og:url" content="http://yoursite.com/posts/JavaSE-%E8%BF%9B%E9%98%B65-%E5%B8%B8%E9%87%8F%E6%B1%A0.html">
+<meta property="og:url" content="http://yoursite.com/2020/06/17/JavaSE-%E8%BF%9B%E9%98%B65-%E5%B8%B8%E9%87%8F%E6%B1%A0/index.html">
 <meta property="og:site_name" content="Damon&#39;s blog">
 <meta property="og:image" content="http://yoursite.com/img/5.jpg">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/20183737-94dac6b71fb27459.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
@@ -125,7 +125,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/posts/JavaSE-进阶5-常量池.html"/>
+  <link rel="canonical" href="http://yoursite.com/2020/06/17/JavaSE-进阶5-常量池/"/>
 
 
 
@@ -281,24 +281,86 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/17/JavaSE-%E8%BF%9B%E9%98%B65-%E5%B8%B8%E9%87%8F%E6%B1%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Damon Salvatore">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/daojian.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Damon's blog">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">JavaSE-进阶5-常量池</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <p><img src="/img/5.jpg" alt="5"></p>
+          <h1 class="post-title" itemprop="name headline">JavaSE-进阶5-常量池</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-17T06:59:19+08:00">
+                2020-06-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/img/5.jpg" alt="5"></p>
 <a id="more"></a> 
 
 <h1 id="Class文件：类的字节码文件，记录类的所有信息"><a href="#Class文件：类的字节码文件，记录类的所有信息" class="headerlink" title="Class文件：类的字节码文件，记录类的所有信息"></a>Class文件：类的字节码文件，记录类的所有信息</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">package javase;</span><br><span class="line"></span><br><span class="line">interface MyInterface &#123;</span><br><span class="line">    int fun(String s);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class FatherClass &#123;</span><br><span class="line">    public void fun1() &#123;</span><br><span class="line">        System.out.println(&quot;call fun1()!&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class TestClass extends FatherClass implements MyInterface &#123;</span><br><span class="line">    private int val;</span><br><span class="line"></span><br><span class="line">    public TestClass(int val) &#123;</span><br><span class="line">        this.val &#x3D; val;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public int fun(String s) &#123;</span><br><span class="line">        System.out.println(s);</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        TestClass tc &#x3D; new TestClass(100);</span><br><span class="line">        tc.fun(&quot;damon salvatore&quot;);</span><br><span class="line">        tc.fun1();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -328,15 +390,98 @@
 <p><a href="https://windysha.github.io/2018/01/18/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM%E4%B9%8BJava%E5%AD%97%E8%8A%82%E7%A0%81%EF%BC%88-class%EF%BC%89%E6%96%87%E4%BB%B6%E8%AF%A6%E8%A7%A3/" target="_blank" rel="noopener">https://windysha.github.io/2018/01/18/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM%E4%B9%8BJava%E5%AD%97%E8%8A%82%E7%A0%81%EF%BC%88-class%EF%BC%89%E6%96%87%E4%BB%B6%E8%AF%A6%E8%A7%A3/</a></p>
 <p><a href="https://www.jb51.net/article/116313.htm" target="_blank" rel="noopener">https://www.jb51.net/article/116313.htm</a></p>
 
-        
-      </div>
-      
-      
       
     </div>
     
     
     
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>救救孩子吧，我养猫的</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Damon Salvatore 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Damon Salvatore 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+            <a href="/tags/jvm/" rel="tag"># jvm</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/06/13/JavaSE-%E8%BF%9B%E9%98%B64-String/" rel="next" title="JavaSE-进阶4-String">
+                <i class="fa fa-chevron-left"></i> JavaSE-进阶4-String
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/06/20/JavaSE-%E8%BF%9B%E9%98%B66-Thread/" rel="prev" title="JavaSE-进阶6-Thread">
+                JavaSE-进阶6-Thread <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -394,9 +539,27 @@
           <nav class="site-state motion-element">
 
             
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
 
             
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
             
 
           </nav>
