@@ -72,7 +72,7 @@
 
 
 
-  <meta name="keywords" content="数据结构,算法," />
+  <meta name="keywords" content="java,spring," />
 
 
 
@@ -84,17 +84,17 @@
 
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="排序算法">
-<meta property="og:url" content="http://yoursite.com/2020/07/02/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:title" content="spring入门系列1">
+<meta property="og:url" content="http://yoursite.com/2020/07/11/spring%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%971/index.html">
 <meta property="og:site_name" content="Damon&#39;s blog">
-<meta property="og:image" content="http://yoursite.com/img/10.jpg">
-<meta property="article:published_time" content="2020-07-02T15:25:36.000Z">
-<meta property="article:modified_time" content="2020-07-02T15:26:25.745Z">
+<meta property="og:image" content="http://yoursite.com/img/11.jpg">
+<meta property="article:published_time" content="2020-07-11T00:44:35.000Z">
+<meta property="article:modified_time" content="2020-07-11T00:45:19.053Z">
 <meta property="article:author" content="Damon Salvatore">
-<meta property="article:tag" content="数据结构">
-<meta property="article:tag" content="算法">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="spring">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/img/10.jpg">
+<meta name="twitter:image" content="http://yoursite.com/img/11.jpg">
 
 
 
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/07/02/排序算法/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/07/11/spring入门系列1/"/>
 
 
 
 
 
-  <title>排序算法 | Damon's blog</title>
+  <title>spring入门系列1 | Damon's blog</title>
   
 
 
@@ -292,7 +292,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/02/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/11/spring%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%971/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Damon Salvatore">
@@ -309,7 +309,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">排序算法</h1>
+          <h1 class="post-title" itemprop="name headline">spring入门系列1</h1>
         
 
         <div class="post-meta">
@@ -321,8 +321,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-02T23:25:36+08:00">
-                2020-07-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-11T08:44:35+08:00">
+                2020-07-11
               </time>
             
 
@@ -359,17 +359,42 @@
       
 
       
-        <p><img src="/img/10.jpg" alt="10"></p>
+        <p><img src="/img/11.jpg" alt="11"></p>
 <a id="more"></a> 
 
-<h1 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h1><ul>
-<li>优化点1：若元素已有序，则可以跳出循环</li>
-<li>优化点2：每次比较范围不应该包括最后已定好的元素</li>
+<h1 id="注解方式"><a href="#注解方式" class="headerlink" title="注解方式"></a>注解方式</h1><h2 id="注解种类"><a href="#注解种类" class="headerlink" title="注解种类"></a>注解种类</h2><p>###组件</p>
+<h4 id="Component"><a href="#Component" class="headerlink" title="Component"></a>Component</h4><ul>
+<li>@Component(“normal”)：指定bean id</li>
+<li>如下为细分组件，没有语言层面的区别，仅仅为了区分所在分层<h4 id="Service：服务层组件"><a href="#Service：服务层组件" class="headerlink" title="Service：服务层组件"></a>Service：服务层组件</h4><h4 id="Repository：持久层组件"><a href="#Repository：持久层组件" class="headerlink" title="Repository：持久层组件"></a>Repository：持久层组件</h4><h4 id="Controller：控制器组件"><a href="#Controller：控制器组件" class="headerlink" title="Controller：控制器组件"></a>Controller：控制器组件</h4></li>
 </ul>
-<h1 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h1><h2 id="pivot选取"><a href="#pivot选取" class="headerlink" title="pivot选取"></a>pivot选取</h2><ul>
-<li>若选取不均匀，可能会导致性能裂化</li>
+<h3 id="自动装配Autowired"><a href="#自动装配Autowired" class="headerlink" title="自动装配Autowired"></a>自动装配Autowired</h3><ul>
+<li>默认为一定要装配</li>
 </ul>
-<h2 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h2><h3 id="填坑法"><a href="#填坑法" class="headerlink" title="填坑法"></a>填坑法</h3><h2 id="指针交换法"><a href="#指针交换法" class="headerlink" title="指针交换法"></a>指针交换法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">package com.verfallen.javase.algorithm;</span><br><span class="line"></span><br><span class="line">import java.util.ArrayList;</span><br><span class="line">import java.util.Arrays;</span><br><span class="line"></span><br><span class="line">public class QuickSort &#123;</span><br><span class="line">    static void helper(ArrayList&lt;Integer&gt; al, int start, int end) &#123;</span><br><span class="line">        if (start &gt;&#x3D; end) &#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        int value &#x3D; al.get(start);</span><br><span class="line">        int s &#x3D; start + 1;</span><br><span class="line">        int e &#x3D; end;</span><br><span class="line">        while (s !&#x3D; e) &#123;</span><br><span class="line">            while (s &lt; e &amp;&amp; al.get(e) &gt; value) &#123;</span><br><span class="line">                e--;</span><br><span class="line">            &#125;</span><br><span class="line">            while (s &lt; e &amp;&amp; al.get(s) &lt;&#x3D; value) &#123;</span><br><span class="line">                s++;</span><br><span class="line">            &#125;</span><br><span class="line">            if (e &gt; s) &#123;</span><br><span class="line">                int temp &#x3D; al.get(e);</span><br><span class="line">                al.set(e, al.get(s));</span><br><span class="line">                al.set(s, temp);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if (al.get(s) &lt; value) &#123;</span><br><span class="line">            al.set(start, al.get(s));</span><br><span class="line">            al.set(s, value);</span><br><span class="line">        &#125;</span><br><span class="line">        helper(al, start, e - 1);</span><br><span class="line">        helper(al, e + 1, end);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void quickSort(ArrayList&lt;Integer&gt; al) &#123;</span><br><span class="line">        helper(al, 0, al.size() - 1);</span><br><span class="line">    &#125;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        ArrayList&lt;Integer&gt; al &#x3D; new ArrayList&lt;&gt;(Arrays.asList(4, 7, 6, 5, 3, 2, 8, 1));</span><br><span class="line">        quickSort(al);</span><br><span class="line">        System.out.println(al);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Qualifier：指定限定符"><a href="#Qualifier：指定限定符" class="headerlink" title="Qualifier：指定限定符"></a>Qualifier：指定限定符</h3><ul>
+<li>@Qualifier(“normal”)</li>
+</ul>
+<h2 id="获取上下文方式"><a href="#获取上下文方式" class="headerlink" title="获取上下文方式"></a>获取上下文方式</h2><ul>
+<li>通过spring-test包的注解<br>@ContextConfiguration(classes = AppConfig.class)</li>
+</ul>
+<h2 id="主函数入口与代码解耦：新建配置类"><a href="#主函数入口与代码解耦：新建配置类" class="headerlink" title="主函数入口与代码解耦：新建配置类"></a>主函数入口与代码解耦：新建配置类</h2><ul>
+<li>@Configuration：新建一个配置类，添加此注解<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">package com.verfallen.demo.config;</span><br><span class="line"></span><br><span class="line">import org.springframework.context.annotation.ComponentScan;</span><br><span class="line">import org.springframework.context.annotation.Configuration;</span><br><span class="line"></span><br><span class="line">@Configuration</span><br><span class="line">@ComponentScan(basePackages &#x3D; &quot;com.verfallen.demo&quot;)</span><br><span class="line">public class AppConfig &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>扫描组件：需要写好包名，否则只去AppConfig所在包下寻找</li>
+</ul>
+<h2 id="测试方法"><a href="#测试方法" class="headerlink" title="测试方法"></a>测试方法</h2><h3 id="Junit-Spring-test"><a href="#Junit-Spring-test" class="headerlink" title="Junit + Spring-test"></a>Junit + Spring-test</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">package com.verfallen.demo.controller;</span><br><span class="line"></span><br><span class="line">import com.verfallen.demo.config.AppConfig;</span><br><span class="line">import org.junit.Test;</span><br><span class="line">import org.junit.runner.RunWith;</span><br><span class="line">import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.test.context.ContextConfiguration;</span><br><span class="line">import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;</span><br><span class="line"></span><br><span class="line">@RunWith(SpringJUnit4ClassRunner.class)</span><br><span class="line">@ContextConfiguration(classes &#x3D; AppConfig.class)</span><br><span class="line">public class ControllerTest &#123;</span><br><span class="line">    @Autowired</span><br><span class="line">    private UserControl userControl;</span><br><span class="line"></span><br><span class="line">    @Test</span><br><span class="line">    public void test() &#123;</span><br><span class="line">        userControl.add();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="main方法：注解与xml"><a href="#main方法：注解与xml" class="headerlink" title="main方法：注解与xml"></a>main方法：注解与xml</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">package com.verfallen.demo;</span><br><span class="line"></span><br><span class="line">import com.verfallen.demo.controller.UserControl;</span><br><span class="line">import org.springframework.context.ApplicationContext;</span><br><span class="line">import org.springframework.context.annotation.AnnotationConfigApplicationContext;</span><br><span class="line">import org.springframework.context.support.ClassPathXmlApplicationContext;</span><br><span class="line"></span><br><span class="line">public class WebTest &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        ApplicationContext context &#x3D; new ClassPathXmlApplicationContext(&quot;applicationcontext.xml&quot;);</span><br><span class="line">&#x2F;&#x2F;        ApplicationContext context &#x3D; new AnnotationConfigApplicationContext(&quot;com.verfallen.demo&quot;);</span><br><span class="line">        UserControl userControl &#x3D; (UserControl) context.getBean(&quot;userControlNormal&quot;);</span><br><span class="line">        userControl.add();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>#xml方式</p>
+<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><ul>
+<li>配置bean，可以构造 属性 设置注入<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;beans xmlns&#x3D;&quot;http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;beans&quot;</span><br><span class="line">       xmlns:xsi&#x3D;&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2001&#x2F;XMLSchema-instance&quot;</span><br><span class="line">       xmlns:context&#x3D;&quot;http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;context&quot;</span><br><span class="line">       xsi:schemaLocation&#x3D;&quot;http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;beans http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;beans&#x2F;spring-beans.xsd http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;context http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;context&#x2F;spring-context.xsd&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;bean id&#x3D;&quot;daoNormal&quot; class&#x3D;&quot;demo.dao.impl.UserDaoNormal&quot;&gt;&lt;&#x2F;bean&gt;</span><br><span class="line"></span><br><span class="line">    &lt;bean id&#x3D;&quot;daoFestival&quot; class&#x3D;&quot;demo.dao.impl.UserDaoFestival&quot;&gt;&lt;&#x2F;bean&gt;</span><br><span class="line"></span><br><span class="line">    &lt;bean id&#x3D;&quot;service&quot; class&#x3D;&quot;demo.service.impl.UserServiceNormal&quot;&gt;</span><br><span class="line">        &lt;constructor-arg name&#x3D;&quot;userDao&quot; ref&#x3D;&quot;daoFestival&quot;&#x2F;&gt;</span><br><span class="line">    &lt;&#x2F;bean&gt;</span><br><span class="line"></span><br><span class="line">    &lt;bean id&#x3D;&quot;controller&quot; class&#x3D;&quot;demo.controller.impl.UserControlNormal&quot;&gt;</span><br><span class="line">        &lt;property name&#x3D;&quot;userService&quot; ref&#x3D;&quot;service&quot;&gt;&lt;&#x2F;property&gt;</span><br><span class="line">    &lt;&#x2F;bean&gt;</span><br><span class="line">&lt;&#x2F;beans&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="获取上下文方式-1"><a href="#获取上下文方式-1" class="headerlink" title="获取上下文方式"></a>获取上下文方式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">package demo;</span><br><span class="line"></span><br><span class="line">import demo.controller.UserControl;</span><br><span class="line">import org.springframework.context.ApplicationContext;</span><br><span class="line">import org.springframework.context.support.ClassPathXmlApplicationContext;</span><br><span class="line"></span><br><span class="line">public class WebTest &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        ApplicationContext context &#x3D; new ClassPathXmlApplicationContext(&quot;applicationcontext.xml&quot;);</span><br><span class="line">&#x2F;&#x2F;        ApplicationContext context &#x3D; new AnnotationConfigApplicationContext(&quot;com.verfallen.demo&quot;);</span><br><span class="line">        UserControl userControl &#x3D; (UserControl) context.getBean(&quot;controller&quot;);</span><br><span class="line">        userControl.add();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<li>千峰教育视频</li>
+</ul>
+
       
     </div>
     
@@ -415,9 +440,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag"># 数据结构</a>
+            <a href="/tags/java/" rel="tag"># java</a>
           
-            <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"># 算法</a>
+            <a href="/tags/spring/" rel="tag"># spring</a>
           
         </div>
       
@@ -430,8 +455,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/07/02/git/" rel="next" title="git">
-                <i class="fa fa-chevron-left"></i> git
+              <a href="/2020/07/02/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" rel="next" title="排序算法">
+                <i class="fa fa-chevron-left"></i> 排序算法
               </a>
             
           </div>
@@ -439,10 +464,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/07/11/spring%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%971/" rel="prev" title="spring入门系列1">
-                spring入门系列1 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -635,7 +656,7 @@ show_date_time();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#冒泡排序"><span class="nav-number">1.</span> <span class="nav-text">冒泡排序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#快速排序"><span class="nav-number">2.</span> <span class="nav-text">快速排序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pivot选取"><span class="nav-number">2.1.</span> <span class="nav-text">pivot选取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现方式"><span class="nav-number">2.2.</span> <span class="nav-text">实现方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#填坑法"><span class="nav-number">2.2.1.</span> <span class="nav-text">填坑法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指针交换法"><span class="nav-number">2.3.</span> <span class="nav-text">指针交换法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#注解方式"><span class="nav-number">1.</span> <span class="nav-text">注解方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#注解种类"><span class="nav-number">1.1.</span> <span class="nav-text">注解种类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Component"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">Component</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Service：服务层组件"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">Service：服务层组件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Repository：持久层组件"><span class="nav-number">1.1.0.3.</span> <span class="nav-text">Repository：持久层组件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Controller：控制器组件"><span class="nav-number">1.1.0.4.</span> <span class="nav-text">Controller：控制器组件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动装配Autowired"><span class="nav-number">1.1.1.</span> <span class="nav-text">自动装配Autowired</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Qualifier：指定限定符"><span class="nav-number">1.1.2.</span> <span class="nav-text">Qualifier：指定限定符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取上下文方式"><span class="nav-number">1.2.</span> <span class="nav-text">获取上下文方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主函数入口与代码解耦：新建配置类"><span class="nav-number">1.3.</span> <span class="nav-text">主函数入口与代码解耦：新建配置类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试方法"><span class="nav-number">1.4.</span> <span class="nav-text">测试方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Junit-Spring-test"><span class="nav-number">1.4.1.</span> <span class="nav-text">Junit + Spring-test</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#main方法：注解与xml"><span class="nav-number">1.4.2.</span> <span class="nav-text">main方法：注解与xml</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置文件"><span class="nav-number">1.5.</span> <span class="nav-text">配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取上下文方式-1"><span class="nav-number">1.6.</span> <span class="nav-text">获取上下文方式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">2.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
