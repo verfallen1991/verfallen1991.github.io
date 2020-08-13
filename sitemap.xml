@@ -207,14 +207,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/git/</loc>
+    <loc>http://yoursite.com/tags/spring/</loc>
     <lastmod>2020-08-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/spring/</loc>
+    <loc>http://yoursite.com/tags/git/</loc>
     <lastmod>2020-08-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
