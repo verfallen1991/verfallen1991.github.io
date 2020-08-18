@@ -72,7 +72,7 @@
 
 
 
-  <meta name="keywords" content="git," />
+  <meta name="keywords" content="算法," />
 
 
 
@@ -84,16 +84,16 @@
 
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="git">
-<meta property="og:url" content="http://yoursite.com/2020/07/02/git/index.html">
+<meta property="og:title" content="单调栈">
+<meta property="og:url" content="http://yoursite.com/2020/08/19/%E5%8D%95%E8%B0%83%E6%A0%88/index.html">
 <meta property="og:site_name" content="Damon&#39;s blog">
-<meta property="og:image" content="http://yoursite.com/img/9.jpg">
-<meta property="article:published_time" content="2020-07-02T15:23:44.000Z">
-<meta property="article:modified_time" content="2020-07-02T15:35:26.525Z">
+<meta property="og:image" content="http://yoursite.com/img/21.jpg">
+<meta property="article:published_time" content="2020-08-18T22:56:14.000Z">
+<meta property="article:modified_time" content="2020-08-18T23:00:26.252Z">
 <meta property="article:author" content="Damon Salvatore">
-<meta property="article:tag" content="git">
+<meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/img/9.jpg">
+<meta name="twitter:image" content="http://yoursite.com/img/21.jpg">
 
 
 
@@ -123,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/07/02/git/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/08/19/单调栈/"/>
 
 
 
 
 
-  <title>git | Damon's blog</title>
+  <title>单调栈 | Damon's blog</title>
   
 
 
@@ -291,7 +291,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/02/git/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/19/%E5%8D%95%E8%B0%83%E6%A0%88/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Damon Salvatore">
@@ -308,7 +308,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">git</h1>
+          <h1 class="post-title" itemprop="name headline">单调栈</h1>
         
 
         <div class="post-meta">
@@ -320,8 +320,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-02T23:23:44+08:00">
-                2020-07-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-19T06:56:14+08:00">
+                2020-08-19
               </time>
             
 
@@ -358,71 +358,29 @@
       
 
       
-        <p><img src="/img/9.jpg" alt="9"></p>
+        <p><img src="/img/21.jpg" alt="21"></p>
 <a id="more"></a> 
 
-<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><h2 id="工作目录"><a href="#工作目录" class="headerlink" title="工作目录"></a>工作目录</h2><h2 id="索引区-index"><a href="#索引区-index" class="headerlink" title="索引区(index)"></a>索引区(index)</h2><h2 id="HEAD：上一次提交的快照"><a href="#HEAD：上一次提交的快照" class="headerlink" title="HEAD：上一次提交的快照"></a>HEAD：上一次提交的快照</h2><h2 id="本地仓库"><a href="#本地仓库" class="headerlink" title="本地仓库"></a>本地仓库</h2><h1 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h1><h2 id="git-init"><a href="#git-init" class="headerlink" title="git init"></a>git init</h2><ul>
-<li>git init：初始化目录为git目录</li>
+<h1 id="单调栈"><a href="#单调栈" class="headerlink" title="单调栈"></a>单调栈</h1><h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><ul>
+<li>元素满足单调性的堆栈</li>
+<li>元素加入栈前，会在栈顶端把破坏栈单调性的元素都删除</li>
 </ul>
-<h2 id="git-add"><a href="#git-add" class="headerlink" title="git add"></a>git add</h2><ul>
-<li>git add file：将file添加到暂存区</li>
-<li>git add -A</li>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><ul>
+<li>通常应用在一维数组，和前后元素大小有关系</li>
+<li>若求右边变大数，则维护递减栈，反之维护递增栈</li>
 </ul>
-<h2 id="git-commit"><a href="#git-commit" class="headerlink" title="git commit"></a>git commit</h2><ul>
-<li>git commit：将暂存区文件提交到本地资源区</li>
-<li>git commit –amend：添加说明 or 改变说明</li>
+<h1 id="典型题"><a href="#典型题" class="headerlink" title="典型题"></a>典型题</h1><h2 id="leetcode-739-每日温度"><a href="#leetcode-739-每日温度" class="headerlink" title="leetcode 739 每日温度"></a>leetcode 739 每日温度</h2><ul>
+<li>每个元素最多只有一次入栈和出栈的机会，时间复杂度为O(n)，暴力法为O(n2)</li>
+<li>维护单调递减栈，只要发现上升元素，则将小元素出栈，同时计算小元素和当前元素的天数<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int[] dailyTemperatures(int[] T) &#123;</span><br><span class="line">        int len &#x3D; T.length;</span><br><span class="line">        int[] res &#x3D; new int[len];</span><br><span class="line">        Arrays.fill(res, 0);</span><br><span class="line">        Deque&lt;Integer&gt; stack &#x3D; new ArrayDeque&lt;Integer&gt;();</span><br><span class="line">        for (int i &#x3D; 0; i &lt; len; i++) &#123;</span><br><span class="line">            while (!stack.isEmpty() &amp;&amp; T[i] &gt; T[stack.peek()]) &#123;</span><br><span class="line">                int topIdx &#x3D; stack.pop();</span><br><span class="line">                res[topIdx] &#x3D; i - topIdx;</span><br><span class="line">            &#125;</span><br><span class="line">            stack.push(i);</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
 </ul>
-<h2 id="git-branch"><a href="#git-branch" class="headerlink" title="git branch"></a>git branch</h2><ul>
-<li>git branch：显示所有分支</li>
-<li>git branch bugfix：创建bugfix分支</li>
-<li>git branch -d bugfix：删除bugfix分支</li>
-</ul>
-<h2 id="git-checkout：可以切换"><a href="#git-checkout：可以切换" class="headerlink" title="git checkout：可以切换"></a>git checkout：可以切换</h2><ul>
-<li>git checkout bugfix：切换到bugfix分支</li>
-<li>git checkout commitId：切换到commitId即分离HEAD</li>
-<li>git checkout -b bugfix：创建并切换到bugFix分支</li>
-<li>git checkout – file1：暂存区文件覆盖工作区</li>
-<li>git checkout file1：</li>
-</ul>
-<h2 id="git-merge"><a href="#git-merge" class="headerlink" title="git merge"></a>git merge</h2><ul>
-<li>git merge bugfix：将bugfix分支合入当前分支<h2 id="git-rebase"><a href="#git-rebase" class="headerlink" title="git rebase"></a>git rebase</h2><h3 id="合并几个commit"><a href="#合并几个commit" class="headerlink" title="合并几个commit"></a>合并几个commit</h3></li>
-<li>git rebase -i BeginCommitId EndCommitId：将开始到结束(左开右闭)的commit合并，EndCommitId不写默认是到HEAD<h3 id="将几个commit加入其它branch"><a href="#将几个commit加入其它branch" class="headerlink" title="将几个commit加入其它branch"></a>将几个commit加入其它branch</h3></li>
-<li>git rebase BeginCommitId EndCommitId –onto master：将开始到结束的commit加入到master分支<br>注意：需要git reset –hard NewCommitId，才能将HEAD Index WorkDir都更新到此Commit</li>
-</ul>
-<h2 id="git-reset"><a href="#git-reset" class="headerlink" title="git reset"></a>git reset</h2><ul>
-<li>git reset –mixed(默认) file1：本地仓库文件覆盖HEAD、暂存区</li>
-<li>git reset –hard commitid：commitid的提交覆盖HEAD、暂存区和工作区</li>
-<li>git reset –soft commitid：commitid的提交覆盖HEAD</li>
-</ul>
-<h2 id="git-stash"><a href="#git-stash" class="headerlink" title="git stash"></a>git stash</h2><ul>
-<li>git stash</li>
-<li>git stash save “fugfix”</li>
-<li>git stash pop</li>
-<li>git stash pop stash@{0}</li>
-<li>git stash apply：不删除stash节点</li>
-<li>git stash list</li>
-<li>git stash drop stash@{0}</li>
-</ul>
-<h2 id="git-pull"><a href="#git-pull" class="headerlink" title="git pull"></a>git pull</h2><h2 id="git-fetch"><a href="#git-fetch" class="headerlink" title="git fetch"></a>git fetch</h2><h2 id="git-push"><a href="#git-push" class="headerlink" title="git push"></a>git push</h2><ul>
-<li>git push</li>
-<li>git push origin bugfix</li>
-</ul>
-<h2 id="git-revert"><a href="#git-revert" class="headerlink" title="git revert"></a>git revert</h2><ul>
-<li>git revert HEAD~：撤销上一次commit，前后都保留</li>
-</ul>
-<h2 id="git-log"><a href="#git-log" class="headerlink" title="git log"></a>git log</h2><ul>
-<li>git log -p</li>
-<li>git log –stat</li>
-</ul>
-<h2 id="git-diff"><a href="#git-diff" class="headerlink" title="git diff"></a>git diff</h2><ul>
-<li>git diff：工作目录与暂存区的差别</li>
-<li>git diff –staged：暂存区与上一次commit的差别</li>
-</ul>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
-<li><a href="https://segmentfault.com/a/1190000007067265" target="_blank" rel="noopener">https://segmentfault.com/a/1190000007067265</a></li>
-<li><a href="https://segmentfault.com/a/1190000007070302" target="_blank" rel="noopener">https://segmentfault.com/a/1190000007070302</a></li>
-<li><a href="https://segmentfault.com/a/1190000007070302" target="_blank" rel="noopener">https://segmentfault.com/a/1190000007070302</a></li>
-</ul>
+<h2 id="leetcode-503-下一个更大的元素"><a href="#leetcode-503-下一个更大的元素" class="headerlink" title="leetcode 503 下一个更大的元素"></a>leetcode 503 下一个更大的元素</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int[] nextGreaterElements(int[] nums) &#123;</span><br><span class="line">        int len &#x3D; nums.length;</span><br><span class="line">        int[] res &#x3D; new int[len];</span><br><span class="line">        Arrays.fill(res, -1);</span><br><span class="line">        Deque&lt;Integer&gt; stack &#x3D; new ArrayDeque&lt;Integer&gt;();</span><br><span class="line">        for (int i &#x3D; 0; i &lt; 2 * len; i++) &#123;</span><br><span class="line">            int idx &#x3D; i % len;</span><br><span class="line">            while (!stack.isEmpty() &amp;&amp; nums[idx] &gt; nums[stack.peek()]) &#123;</span><br><span class="line">                int index &#x3D; stack.pop();</span><br><span class="line">                res[index] &#x3D; nums[idx];</span><br><span class="line">            &#125;</span><br><span class="line">            stack.push(idx);</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="leetcode-84-柱状图中最大的矩形"><a href="#leetcode-84-柱状图中最大的矩形" class="headerlink" title="leetcode 84 柱状图中最大的矩形"></a>leetcode 84 柱状图中最大的矩形</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int largestRectangleArea(int[] heights) &#123;</span><br><span class="line">        int len &#x3D; heights.length;</span><br><span class="line">        int[] array &#x3D; new int[len + 1];</span><br><span class="line">        System.arraycopy(heights, 0, array, 0, len);</span><br><span class="line">        array[len] &#x3D; 0;</span><br><span class="line">        int res &#x3D; 0;</span><br><span class="line">        Deque&lt;Integer&gt; stack &#x3D; new ArrayDeque&lt;Integer&gt;();</span><br><span class="line">        for (int i &#x3D; 0; i &lt; (len + 1); i++) &#123;</span><br><span class="line">            while(!stack.isEmpty() &amp;&amp; array[i] &lt; array[stack.peek()]) &#123;</span><br><span class="line">                int idx &#x3D; stack.pop();</span><br><span class="line">                int wid &#x3D; stack.isEmpty() ? -1 : stack.peek();</span><br><span class="line">                int area &#x3D; array[idx] * (i - wid - 1);</span><br><span class="line">                res &#x3D; Math.max(res, area);</span><br><span class="line">            &#125;</span><br><span class="line">            stack.push(i);</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
 
       
     </div>
@@ -469,7 +427,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/git/" rel="tag"># git</a>
+            <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"># 算法</a>
           
         </div>
       
@@ -482,8 +440,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/06/30/JavaSE-%E8%BF%9B%E9%98%B68-%E4%BB%A3%E7%90%86/" rel="next" title="JavaSE-进阶8-代理">
-                <i class="fa fa-chevron-left"></i> JavaSE-进阶8-代理
+              <a href="/2020/08/18/%E5%88%86%E6%B2%BB/" rel="next" title="分治">
+                <i class="fa fa-chevron-left"></i> 分治
               </a>
             
           </div>
@@ -491,10 +449,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/07/02/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" rel="prev" title="排序算法">
-                排序算法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -685,7 +639,7 @@ show_date_time();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本概念"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#工作目录"><span class="nav-number">1.1.</span> <span class="nav-text">工作目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#索引区-index"><span class="nav-number">1.2.</span> <span class="nav-text">索引区(index)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HEAD：上一次提交的快照"><span class="nav-number">1.3.</span> <span class="nav-text">HEAD：上一次提交的快照</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本地仓库"><span class="nav-number">1.4.</span> <span class="nav-text">本地仓库</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本命令"><span class="nav-number">2.</span> <span class="nav-text">基本命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-init"><span class="nav-number">2.1.</span> <span class="nav-text">git init</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-add"><span class="nav-number">2.2.</span> <span class="nav-text">git add</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-commit"><span class="nav-number">2.3.</span> <span class="nav-text">git commit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-branch"><span class="nav-number">2.4.</span> <span class="nav-text">git branch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-checkout：可以切换"><span class="nav-number">2.5.</span> <span class="nav-text">git checkout：可以切换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-merge"><span class="nav-number">2.6.</span> <span class="nav-text">git merge</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-rebase"><span class="nav-number">2.7.</span> <span class="nav-text">git rebase</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#合并几个commit"><span class="nav-number">2.7.1.</span> <span class="nav-text">合并几个commit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将几个commit加入其它branch"><span class="nav-number">2.7.2.</span> <span class="nav-text">将几个commit加入其它branch</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-reset"><span class="nav-number">2.8.</span> <span class="nav-text">git reset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-stash"><span class="nav-number">2.9.</span> <span class="nav-text">git stash</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-pull"><span class="nav-number">2.10.</span> <span class="nav-text">git pull</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-fetch"><span class="nav-number">2.11.</span> <span class="nav-text">git fetch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-push"><span class="nav-number">2.12.</span> <span class="nav-text">git push</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-revert"><span class="nav-number">2.13.</span> <span class="nav-text">git revert</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-log"><span class="nav-number">2.14.</span> <span class="nav-text">git log</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-diff"><span class="nav-number">2.15.</span> <span class="nav-text">git diff</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#单调栈"><span class="nav-number">1.</span> <span class="nav-text">单调栈</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#性质"><span class="nav-number">1.1.</span> <span class="nav-text">性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">1.2.</span> <span class="nav-text">使用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#典型题"><span class="nav-number">2.</span> <span class="nav-text">典型题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#leetcode-739-每日温度"><span class="nav-number">2.1.</span> <span class="nav-text">leetcode 739 每日温度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#leetcode-503-下一个更大的元素"><span class="nav-number">2.2.</span> <span class="nav-text">leetcode 503 下一个更大的元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#leetcode-84-柱状图中最大的矩形"><span class="nav-number">2.3.</span> <span class="nav-text">leetcode 84 柱状图中最大的矩形</span></a></li></ol></li></ol></div>
             
 
           </div>
