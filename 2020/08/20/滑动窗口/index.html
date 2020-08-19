@@ -84,17 +84,16 @@
 
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="归并排序">
-<meta property="og:url" content="http://yoursite.com/2020/08/12/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/index.html">
+<meta property="og:title" content="滑动窗口">
+<meta property="og:url" content="http://yoursite.com/2020/08/20/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/index.html">
 <meta property="og:site_name" content="Damon&#39;s blog">
-<meta property="og:image" content="http://yoursite.com/img/17.jpg">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/20183737-b88062c58e1356b7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="article:published_time" content="2020-08-11T22:28:02.000Z">
-<meta property="article:modified_time" content="2020-08-11T22:31:00.528Z">
+<meta property="og:image" content="http://yoursite.com/img/22.jpg">
+<meta property="article:published_time" content="2020-08-19T22:52:54.000Z">
+<meta property="article:modified_time" content="2020-08-19T22:54:08.074Z">
 <meta property="article:author" content="Damon Salvatore">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/img/17.jpg">
+<meta name="twitter:image" content="http://yoursite.com/img/22.jpg">
 
 
 
@@ -124,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/08/12/归并排序/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/08/20/滑动窗口/"/>
 
 
 
 
 
-  <title>归并排序 | Damon's blog</title>
+  <title>滑动窗口 | Damon's blog</title>
   
 
 
@@ -292,7 +291,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/12/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/20/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Damon Salvatore">
@@ -309,7 +308,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">归并排序</h1>
+          <h1 class="post-title" itemprop="name headline">滑动窗口</h1>
         
 
         <div class="post-meta">
@@ -321,8 +320,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-12T06:28:02+08:00">
-                2020-08-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-20T06:52:54+08:00">
+                2020-08-20
               </time>
             
 
@@ -359,13 +358,16 @@
       
 
       
-        <p><img src="/img/17.jpg" alt="17"></p>
+        <p><img src="/img/22.jpg" alt="22"></p>
 <a id="more"></a> 
 
-<h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><pre><code>归并排序（MERGE-SORT）是利用归并的思想实现的排序方法，该算法采用经典的分治（divide-and-conquer）策略（分治法将问题分(divide)成一些小的问题然后递归求解，而治(conquer)的阶段则将分的阶段得到的各答案&quot;修补&quot;在一起，即分而治之)。</code></pre><p><img src="https://upload-images.jianshu.io/upload_images/20183737-b88062c58e1356b7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h1 id="典型题"><a href="#典型题" class="headerlink" title="典型题"></a>典型题</h1><h2 id="leetcode-493-翻转对"><a href="#leetcode-493-翻转对" class="headerlink" title="leetcode 493 翻转对"></a>leetcode 493 翻转对</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int res;</span><br><span class="line">    public void mergeSort(int[] array) &#123;</span><br><span class="line">        int[] temp &#x3D; new int[array.length];</span><br><span class="line">        sort(array, 0, array.length - 1, temp);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void sort(int[] array, int start, int end, int[] temp) &#123;</span><br><span class="line">        if (start &gt;&#x3D; end) &#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        int mid &#x3D; start + (end - start) &#x2F; 2;</span><br><span class="line">        sort(array, start, mid, temp);</span><br><span class="line">        sort(array, mid + 1, end, temp);</span><br><span class="line">        merge(array, start, mid, end, temp);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void merge(int[] array, int start, int mid, int end, int[] temp) &#123;</span><br><span class="line">        int i &#x3D; start;</span><br><span class="line">        int j &#x3D; mid + 1;</span><br><span class="line">        while(i &lt;&#x3D; mid &amp;&amp; j &lt;&#x3D; end) &#123;</span><br><span class="line">            if ((long)array[i] &gt; 2 * (long)array[j]) &#123;</span><br><span class="line">                res +&#x3D; (mid - i + 1);</span><br><span class="line">                j++;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        i &#x3D; start;</span><br><span class="line">        j &#x3D; mid + 1;</span><br><span class="line">        int t &#x3D; start;</span><br><span class="line">        while (i &lt;&#x3D; mid &amp;&amp; j &lt;&#x3D; end) &#123;</span><br><span class="line">            if (array[i] &lt;&#x3D; array[j]) &#123;</span><br><span class="line">                temp[t] &#x3D; array[i];</span><br><span class="line">                i++;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                temp[t] &#x3D; array[j];</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">            t++;</span><br><span class="line">        &#125;</span><br><span class="line">        while (i &lt;&#x3D; mid) &#123;</span><br><span class="line">            temp[t++] &#x3D; array[i++];</span><br><span class="line">        &#125;</span><br><span class="line">        while (j &lt;&#x3D; end) &#123;</span><br><span class="line">            temp[t++] &#x3D; array[j++];</span><br><span class="line">        &#125;</span><br><span class="line">        for (i &#x3D; start; i &lt;&#x3D; end; i++) &#123;</span><br><span class="line">            array[i] &#x3D; temp[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public int reversePairs(int[] nums) &#123;</span><br><span class="line">        mergeSort(nums);</span><br><span class="line">        return this.res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h1><h2 id="求解满足-的最大或最小区间问题"><a href="#求解满足-的最大或最小区间问题" class="headerlink" title="求解满足**的最大或最小区间问题"></a>求解满足**的最大或最小区间问题</h2><h2 id="区间连续"><a href="#区间连续" class="headerlink" title="区间连续"></a>区间连续</h2><h1 id="典型题"><a href="#典型题" class="headerlink" title="典型题"></a>典型题</h1><h2 id="leetcode-209-长度最小的子数组"><a href="#leetcode-209-长度最小的子数组" class="headerlink" title="leetcode 209 长度最小的子数组"></a>leetcode 209 长度最小的子数组</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int minSubArrayLen(int s, int[] nums) &#123;</span><br><span class="line">        int res &#x3D; Integer.MAX_VALUE;</span><br><span class="line">        int start &#x3D; 0;</span><br><span class="line">        int end &#x3D; -1;</span><br><span class="line">        int len &#x3D; nums.length;</span><br><span class="line">        int curSum &#x3D; 0;</span><br><span class="line">        while (end &lt; len) &#123;</span><br><span class="line">            if (curSum &lt; s) &#123;</span><br><span class="line">                end++;</span><br><span class="line">                if (end &#x3D;&#x3D; len) &#123;</span><br><span class="line">                    break;</span><br><span class="line">                &#125;</span><br><span class="line">                curSum +&#x3D; nums[end];</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                res &#x3D; Math.min(end - start + 1, res);</span><br><span class="line">                curSum -&#x3D; nums[start];</span><br><span class="line">                start++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return res &#x3D;&#x3D; Integer.MAX_VALUE ? 0 : res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.cnblogs.com/chengxiao/p/6194356.html" target="_blank" rel="noopener">https://www.cnblogs.com/chengxiao/p/6194356.html</a></p>
+<h2 id="leetcode-3-无重复字符的最长子串"><a href="#leetcode-3-无重复字符的最长子串" class="headerlink" title="leetcode 3 无重复字符的最长子串"></a>leetcode 3 无重复字符的最长子串</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int lengthOfLongestSubstring(String s) &#123;</span><br><span class="line">        int result &#x3D; Integer.MIN_VALUE;</span><br><span class="line">        int len &#x3D; s.length();</span><br><span class="line">        HashSet&lt;Character&gt; hashSet &#x3D; new HashSet&lt;Character&gt;();</span><br><span class="line">        int left &#x3D; 0;</span><br><span class="line">        for (int right &#x3D; 0; right &lt; len; right++) &#123;</span><br><span class="line">            char c &#x3D; s.charAt(right);</span><br><span class="line">            if (hashSet.contains(c)) &#123;</span><br><span class="line">                while (hashSet.contains(c)) &#123;</span><br><span class="line">                    hashSet.remove(s.charAt(left));</span><br><span class="line">                    left++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                result &#x3D; Math.max(result, right - left + 1);</span><br><span class="line">            &#125;</span><br><span class="line">            hashSet.add(c);</span><br><span class="line">        &#125;</span><br><span class="line">        return result &#x3D;&#x3D; Integer.MIN_VALUE ? 0 : result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="leetcode-1004-最大连续1的个数"><a href="#leetcode-1004-最大连续1的个数" class="headerlink" title="leetcode 1004 最大连续1的个数"></a>leetcode 1004 最大连续1的个数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int longestOnes(int[] A, int K) &#123;</span><br><span class="line">        int res &#x3D; Integer.MIN_VALUE;</span><br><span class="line">        final int LEN &#x3D; A.length;</span><br><span class="line">        int left &#x3D; 0;</span><br><span class="line">        int curZero &#x3D; 0;</span><br><span class="line">        for (int right &#x3D; 0; right &lt; LEN; right++) &#123;</span><br><span class="line">            if (A[right] &#x3D;&#x3D; 1) &#123;</span><br><span class="line">                res &#x3D; Math.max(res, right - left + 1);</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                if (curZero &lt; K) &#123;</span><br><span class="line">                    curZero++;</span><br><span class="line">                    res &#x3D; Math.max(res, right - left + 1);</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    while (A[left] !&#x3D; 0) &#123;</span><br><span class="line">                        left++;</span><br><span class="line">                    &#125;</span><br><span class="line">                    left++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return res &#x3D;&#x3D; Integer.MIN_VALUE ? 0 : res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
 
       
     </div>
@@ -425,8 +427,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/08/08/%E5%B9%B6%E6%9F%A5%E9%9B%86/" rel="next" title="并查集">
-                <i class="fa fa-chevron-left"></i> 并查集
+              <a href="/2020/08/19/%E5%8D%95%E8%B0%83%E6%A0%88/" rel="next" title="单调栈">
+                <i class="fa fa-chevron-left"></i> 单调栈
               </a>
             
           </div>
@@ -434,10 +436,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/08/12/%E5%AD%97%E5%85%B8%E6%A0%91/" rel="prev" title="字典树">
-                字典树 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -628,7 +626,7 @@ show_date_time();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#算法"><span class="nav-number">1.</span> <span class="nav-text">算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#典型题"><span class="nav-number">2.</span> <span class="nav-text">典型题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#leetcode-493-翻转对"><span class="nav-number">2.1.</span> <span class="nav-text">leetcode 493 翻转对</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#性质"><span class="nav-number">1.</span> <span class="nav-text">性质</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#求解满足-的最大或最小区间问题"><span class="nav-number">1.1.</span> <span class="nav-text">求解满足**的最大或最小区间问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区间连续"><span class="nav-number">1.2.</span> <span class="nav-text">区间连续</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#典型题"><span class="nav-number">2.</span> <span class="nav-text">典型题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#leetcode-209-长度最小的子数组"><span class="nav-number">2.1.</span> <span class="nav-text">leetcode 209 长度最小的子数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#leetcode-3-无重复字符的最长子串"><span class="nav-number">2.2.</span> <span class="nav-text">leetcode 3 无重复字符的最长子串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#leetcode-1004-最大连续1的个数"><span class="nav-number">2.3.</span> <span class="nav-text">leetcode 1004 最大连续1的个数</span></a></li></ol></li></ol></div>
             
 
           </div>
