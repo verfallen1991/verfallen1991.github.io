@@ -242,6 +242,13 @@
   </url>
   
   <url>
+    <loc>http://yoursite.com/tags/concurrent/</loc>
+    <lastmod>2020-08-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/tags/spring/</loc>
     <lastmod>2020-08-26</lastmod>
     <changefreq>daily</changefreq>
@@ -249,7 +256,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/concurrent/</loc>
+    <loc>http://yoursite.com/tags/git/</loc>
     <lastmod>2020-08-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -264,13 +271,6 @@
   
   <url>
     <loc>http://yoursite.com/tags/%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2020-08-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/tags/git/</loc>
     <lastmod>2020-08-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
